@@ -195,6 +195,33 @@ class CiviCRM_Caldera_Forms_Order_Processor {
 
 		$form_values['line_items'] = $line_items;
 
+		// 20251103 Start
+		//  Calculate total_amount from line items to account for discounts
+		$total_amount = 0;
+		foreach ($line_items as $item) {
+    		if (isset($item['line_item']) && is_array($item['line_item'])) {
+        		foreach ($item['line_item'] as $line) {
+            		$total_amount += isset($line['line_total']) ? floatval($line['line_total']) : 0;
+        		}
+    		}
+		}
+
+		// Add tax if applicable
+		if ($this->total_tax_amount) {
+    		$total_amount += $this->total_tax_amount;
+		}
+
+		// Override the total_amount with the calculated value from line items
+		$form_values['total_amount'] = $total_amount;
+
+		// Error logging - compare totals
+		/*
+		error_log('Form values total: ' . print_r($form_values['total_amount'] ?? 'not set', true));
+		error_log('Line items: ' . print_r($line_items, true));
+		error_log('Tax amount: ' . print_r($this->total_tax_amount, true));
+		error_log('Form values before API call: ' . print_r($form_values, true));
+		*/
+		// 20251103 End
 		try {
 			$create_order = civicrm_api3( 'Order', 'create', $form_values );
 

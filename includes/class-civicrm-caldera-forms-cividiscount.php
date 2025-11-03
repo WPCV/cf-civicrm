@@ -300,14 +300,19 @@ class CiviCRM_Caldera_Forms_CiviDiscount {
 			'disabled' => empty( $option['disabled'] ) ? '' : $option['disabled']
 		];
 
+		//2025-11-03: add unit price and line total to both arrays
 		add_filter( 'cfc_filter_price_field_value_get', function( $field_value, $field_value_id ) use ( $price_field_value, $discounted_amount, $label ) {
 			if ( ! is_array( $field_value_id ) && $field_value_id == $price_field_value['id'] ) {
 				$field_value['amount'] = $discounted_amount;
 				$field_value['label'] = $label;
+				$field_value['unit_price'] = $discounted_amount;
+                $field_value['line_total'] = $discounted_amount;
 			} elseif ( is_array( $field_value_id ) ) {
 				if ( in_array( $price_field_value['id'], $field_value_id ) ) {
 					$field_value[$price_field_value['id']]['amount'] = $discounted_amount;
 					$field_value[$price_field_value['id']]['label'] = $label;
+					$field_value[$price_field_value['id']]['unit_price'] = $discounted_amount;
+        	        $field_value[$price_field_value['id']]['line_total'] = $discounted_amount;
 				}
 			}
 
