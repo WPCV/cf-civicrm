@@ -88,7 +88,7 @@ foreach ( $caseFieldsResult['values'] as $key => $value ) {
 <div class="caldera-config-group">
 	<label><?php _e( 'Case Created By', 'cf-civicrm' ); ?></label>
 	<div class="caldera-config-field">
-		<select id="{{_id}}_creator_id" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[creator_id]">
+		<select id="{{_id}}_creator_id" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[creator_id]">
 		</select>
 	</div>
 </div>
@@ -97,7 +97,7 @@ foreach ( $caseFieldsResult['values'] as $key => $value ) {
 <div class="caldera-config-group">
 	<label><?php _e( 'Case Manager', 'cf-civicrm' ); ?></label>
 	<div class="caldera-config-field">
-		<select id="{{_id}}_manager_id" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[manager_id]">
+		<select id="{{_id}}_manager_id" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[manager_id]">
 		</select>
 	</div>
 </div>

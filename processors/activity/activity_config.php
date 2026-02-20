@@ -101,7 +101,7 @@ foreach ( $activityFieldsResult['values'] as $key => $value ) {
 <div class="caldera-config-group">
 	<label><?php _e( 'Target Contact ID', 'cf-civicrm' ); ?></label>
 	<div class="caldera-config-field">
-		<select id="{{_id}}_target_contact_id" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[target_contact_id]">
+		<select id="{{_id}}_target_contact_id" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[target_contact_id]">
 		</select>
 	</div>
 </div>
@@ -109,7 +109,7 @@ foreach ( $activityFieldsResult['values'] as $key => $value ) {
 <div class="caldera-config-group">
 	<label><?php _e( 'Source Contact ID', 'cf-civicrm' ); ?></label>
 	<div class="caldera-config-field">
-		<select id="{{_id}}_source_contact_id" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[source_contact_id]">
+		<select id="{{_id}}_source_contact_id" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[source_contact_id]">
 		</select>
 	</div>
 </div>
@@ -117,7 +117,7 @@ foreach ( $activityFieldsResult['values'] as $key => $value ) {
 <div class="caldera-config-group">
 	<label><?php _e( 'Assignee Contact ID', 'cf-civicrm' ); ?></label>
 	<div class="caldera-config-field">
-		<select id="{{_id}}_assignee_contact_id" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[assignee_contact_id]">
+		<select id="{{_id}}_assignee_contact_id" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[assignee_contact_id]">
 		</select>
 	</div>
 </div>

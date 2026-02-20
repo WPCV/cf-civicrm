@@ -29,7 +29,7 @@ function cfc_select2_defaults( selector, value ) {
 				data : {
 					contact_id: value,
 					action : 'civicrm_get_contacts',
-					nonce: jQuery( selector ).attr( 'nonce' )
+					nonce: jQuery( selector ).attr( 'data-nonce' )
 				},
 				success : function( response ) {
 					var result = JSON.parse( response );
@@ -56,7 +56,7 @@ function cfc_select2_defaults( selector, value ) {
 				return {
 					search: params.term,
 					action: 'civicrm_get_contacts',
-					nonce: jQuery( selector ).attr( 'nonce' )
+					nonce: jQuery( selector ).attr( 'data-nonce' )
 				};
 			},
 			processResults: function( data ) {

@@ -135,7 +135,7 @@ $campaigns = civicrm_api3( 'Campaign', 'get', [
 			<label><?php echo esc_html( $value ); ?> </label>
 			<div class="caldera-config-field">
 				<?php if ( $key == 'registered_by_id' ): ?>
-					<select id="{{_id}}_<?php esc_attr_e( $key ); ?>" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[<?php esc_attr_e( $key ); ?>]">
+					<select id="{{_id}}_<?php esc_attr_e( $key ); ?>" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[<?php esc_attr_e( $key ); ?>]">
 					</select>
 				<?php else: ?>
 					<?php echo '{{{_field slug="' . $key . '"}}}'; ?>
