@@ -9,6 +9,7 @@
  * GitHub Plugin URI: WPCV/cf-civicrm
  * Text Domain: cf-civicrm
  * Domain Path: /languages
+ * Requires Plugins: caldera-forms, civicrm, cf-form-builder-patch
  */
 
 /**
