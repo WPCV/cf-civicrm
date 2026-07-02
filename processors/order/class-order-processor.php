@@ -526,6 +526,12 @@ class CiviCRM_Caldera_Forms_Order_Processor {
 	 * @param array $order The order
 	 */
 	public function transition_participants_for_order( $participant_statuses, $order ) {
+
+    // Add null and array check before using array_keys()
+    if ( empty( $participant_statuses ) || ! is_array( $participant_statuses ) ) {
+      return;
+    }
+
 		array_map(
 			function( $participant_id, $participant_status ) use ( $order ) {
 
