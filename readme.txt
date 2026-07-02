@@ -35,6 +35,9 @@ Note: this plugin is no longer in active development. For urgent bug reports (or
 
 == Changelog ==
 
+= 1.2.0 =
+* CiviCRM 6.15 Compatability
+
 = 1.1.1 =
 * Fix for Dedupe in CiviCRM 5.62.0+
 
