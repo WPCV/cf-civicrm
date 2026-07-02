@@ -366,11 +366,20 @@ class CiviCRM_Caldera_Forms_Line_Item_Processor {
 
 			$price_field = $this->plugin->helper->get_price_set_column_by_id( $field_value['price_field_id'], 'price_field' );
 
+			//20251103
+			// Check if there's already a discounted amount via the filter
+			$filtered_field_value = apply_filters( 'cfc_filter_price_field_value_get', $field_value, $field_value['id'] );
+
+			// Use the filtered amount if it exists, otherwise use the original
+			$amount_to_use = isset($filtered_field_value['amount']) ? $filtered_field_value['amount'] : $field_value['amount'];
+			$label_to_use = isset($filtered_field_value['label']) ? $filtered_field_value['label'] : $field_value['label'];
+			//20251103
+
 			$field_value['qty'] = 1;
-			$field_value['label'] = $field_value['label'];
+			$field_value['label'] = $label_to_use;
 			$field_value['field_title'] = $price_field['label'];
-			$field_value['unit_price'] = $field_value['amount'];
-			$field_value['line_total'] = $field_value['amount'] * $field_value['qty'];
+			$field_value['unit_price'] = $amount_to_use;
+			$field_value['line_total'] = $amount_to_use * $field_value['qty'];
 			$field_value['price_field_value_id'] = $field_value['id'];
 
 			$field_value['entity_table'] = $entity_table ? $entity_table : $this->guess_entity_table( $price_field_value );

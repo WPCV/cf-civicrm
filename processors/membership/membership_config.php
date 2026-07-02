@@ -48,7 +48,7 @@ $campaigns = civicrm_api3( 'Campaign', 'get', [
 	<div class="member_of_contact_id caldera-config-group">
 		<label><?php _e( 'Organization', 'cf-civicrm' ); ?></label>
 		<div class="caldera-config-field">
-			<select id="{{_id}}_member_of_contact_id" class="block-input field-config" style="width: 100%;" nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[member_of_contact_id]">
+			<select id="{{_id}}_member_of_contact_id" class="block-input field-config" style="width: 100%;" data-nonce="<?php echo wp_create_nonce('admin_get_civi_contact'); ?>" name="{{_name}}[member_of_contact_id]">
 			</select>
 		</div>
 	</div>

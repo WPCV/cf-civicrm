@@ -11,7 +11,7 @@
 ?>
 	<?php echo $field_label; ?>
 	<?php echo $field_before; ?>
-		<select <?php echo $field_placeholder; ?> id="<?php echo esc_attr( $field_id ); ?>" data-field="<?php echo esc_attr( $field_base_id ); ?>" class="<?php echo esc_attr( $field_class ); ?>" nonce="<?php echo wp_create_nonce('civicrm_contact_reference_get'); ?>" name="<?php echo esc_attr( $field_name ); ?>" <?php echo $field_required; ?> <?php echo $placeholder; ?>>
+		<select <?php echo $field_placeholder; ?> id="<?php echo esc_attr( $field_id ); ?>" data-field="<?php echo esc_attr( $field_base_id ); ?>" class="<?php echo esc_attr( $field_class ); ?>" data-nonce="<?php echo wp_create_nonce('civicrm_contact_reference_get'); ?>" name="<?php echo esc_attr( $field_name ); ?>" <?php echo $field_required; ?> <?php echo $placeholder; ?>>
 		</select>
 		<?php echo $field_caption; ?>
 	<?php echo $field_after; ?>
@@ -30,7 +30,7 @@
 					action: 'civicrm_contact_reference_get',
 					field_id: $( '#<?php echo esc_attr( $field_id ); ?>' ).data( 'field' ),
 					form_id: '<?php echo esc_attr( $form['ID'] ); ?>',
-					nonce: $( '#<?php echo esc_attr( $field_id ); ?>' ).attr( 'nonce' )
+					nonce: $( '#<?php echo esc_attr( $field_id ); ?>' ).attr( 'data-nonce' )
 				},
 				success : function( response ) {
 					var result = JSON.parse( response );
@@ -56,7 +56,7 @@
 						action: 'civicrm_contact_reference_get',
 						field_id: $( '#<?php echo esc_attr( $field_id ); ?>' ).data( 'field' ),
 						form_id: '<?php echo esc_attr( $form['ID'] ); ?>',
-						nonce: $( '#<?php echo esc_attr( $field_id ); ?>' ).attr( 'nonce' )
+						nonce: $( '#<?php echo esc_attr( $field_id ); ?>' ).attr( 'data-nonce' )
 						};
 				},
 				processResults: function( data ) {

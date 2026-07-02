@@ -30,7 +30,7 @@
 		<?php esc_html_e( 'Premium', 'cf-civicrm' ); ?>
 	</label>
 	<div class="caldera-config-field">
-		<select id="{{_id}}_premium_id" class="block-input field-config" name="{{_name}}[premium_id]" nonce="<?php echo wp_create_nonce( 'admin_get_premiums' ); ?>">
+		<select id="{{_id}}_premium_id" class="block-input field-config" name="{{_name}}[premium_id]" data-nonce="<?php echo wp_create_nonce( 'admin_get_premiums' ); ?>">
 		</select>
 	</div>
 	<p class="description">
@@ -98,7 +98,7 @@
 				data : {
 					premium_id: '{{premium_id}}',
 					action : 'civicrm_get_premiums',
-					nonce: $( 'select#{{_id}}_premium_id' ).attr( 'nonce' )
+					nonce: $( 'select#{{_id}}_premium_id' ).attr( 'data-nonce' )
 				},
 				success : function( response ) {
 					var result = JSON.parse( response );
@@ -124,7 +124,7 @@
 					return {
 						search: params.term,
 						action: 'civicrm_get_premiums',
-						nonce: $( 'select#{{_id}}_premium_id' ).attr( 'nonce' )
+						nonce: $( 'select#{{_id}}_premium_id' ).attr( 'data-nonce' )
 					};
 				},
 				processResults: function( data ) {
