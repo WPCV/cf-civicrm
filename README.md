@@ -28,7 +28,7 @@ The Caldera Forms CiviCRM plugin contains a set of form processors that interact
 
 To use this plugin, the following is needed:
 
--   WordPress 6.8   
+-   WordPress 6.9   
 -   CiviCRM 6.15
 -   [Caldera Forms](https://wordpress.org/plugins/caldera-forms/ "Caldera Forms WordPress plugin") v1.9.9
 
