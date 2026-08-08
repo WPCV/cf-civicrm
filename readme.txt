@@ -3,7 +3,7 @@ Contributors: mecachisenros, needle
 Tags: civicrm, caldera, forms, integration
 Requires at least: 6.9
 Tested up to: 6.9
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ Note: this plugin is no longer in active development. For urgent bug reports (or
 
 
 == Changelog ==
+
+= 1.2.1 =
+* CiviCRM 6.16 Compatability
 
 = 1.2.0 =
 * CiviCRM 6.15 Compatability

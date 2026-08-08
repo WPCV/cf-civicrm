@@ -247,7 +247,6 @@ class CiviCRM_Caldera_Forms_Contact_Processor {
 						try {
 							$new_email = civicrm_api3( 'Email', 'create', [
 								'id' => $contact['email_id'],
-								'contact_id' => $contact['contact_id'],
 								'email' => $form_values['civicrm_contact']['email'],
 								'is_primary' => 1,
 							] );
