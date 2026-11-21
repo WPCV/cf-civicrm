@@ -726,7 +726,12 @@ class CiviCRM_Caldera_Forms_Helper {
 	 */
 	public function get_tax_settings() {
 		if ( is_array( $this->tax_settings ) ) return $this->tax_settings;
-		$this->tax_settings = $this->get_civicrm_settings( 'contribution_invoice_settings' );
+		// Read individual settings; CiviCRM 6.20 removed the legacy combined setting in https://github.com/civicrm/civicrm-core/pull/37212
+		$this->tax_settings = [
+			'invoicing' => $this->get_civicrm_settings( 'invoicing' ),
+			'tax_term' => $this->get_civicrm_settings( 'tax_term' ),
+			'tax_display_settings' => $this->get_civicrm_settings( 'tax_display_settings' ),
+		];
 		return $this->tax_settings;
 	}
 
